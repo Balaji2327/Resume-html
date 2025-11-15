@@ -3,29 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> BALAJI Android Developer</title>
+    <title>BALAJI - Android Developer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
-<body style="text-align: start;">
+<body>
     <!-- Header Section with Name and Professional Title -->
     <header>
-        <h1>BALAJI R</h1>
-        <h2>Android Developer</h2>
-        
-        <!-- Profile Image -->
-        <img src="Profile.jpg" 
-             alt="Balaji R - Android Developer" 
-             width="250" 
-             height="250"
-             style="border-radius: 50%; border: 2px solid #000;">
+        <div class="header-content">
+            <h1>BALAJI R</h1>
+            <h2>App Developer</h2>
+            
+            <!-- Profile Image -->
+            <img src="Profile.jpg" 
+                 alt="Balaji R - App Developer" 
+                 class="profile-img">
+        </div>
     </header>
 
     <!-- Main Content Area -->
     <main>
         <!-- About Me Section -->
-        <section>
+        <section class="about-section">
             <h3>About Me</h3>
             <p>
-                I am a passionate and dedicated android developer. My expertise spans across both front-end and 
+                I am a passionate and dedicated app developer. My expertise spans across both front-end and 
                 back-end technologies, allowing me to deliver complete and seamless user experiences.
             </p>
             <p>
@@ -41,105 +45,165 @@
             </p>
         </section>
 
-        <hr>
-
         <!-- Technical Skills Section -->
-        <section>
+        <section class="skills-section">
             <h3>Technical Skills</h3>
             
-            <h4>Programming Languages</h4>
-            <ul>
-                <li>Dart</li>
-                <li>Python</li>
-                <li>C</li>
-                <li>Java</li>
-                <li>C++</li>
-            </ul>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h4>Programming Languages</h4>
+                    <ul>
+                        <li>Dart</li>
+                        <li>Python</li>
+                        <li>C</li>
+                        <li>Java</li>
+                        <li>C++</li>
+                    </ul>
+                </div>
 
-            <h4>Frontend Technologies</h4>
-            <ul>
-                <li>Flutter</li>
-                <li>HTML & CSS</li>
-            </ul>
+                <div class="skill-category">
+                    <h4>Frontend Technologies</h4>
+                    <ul>
+                        <li>Flutter</li>
+                        <li>HTML & CSS</li>
+                    </ul>
+                </div>
 
-            <h4>Backend Technologies</h4>
-            <ul>
-                <li>Fire-Base</li>
-            </ul>
+                <div class="skill-category">
+                    <h4>Backend Technologies</h4>
+                    <ul>
+                        <li>Fire-Base</li>
+                    </ul>
+                </div>
 
-            <h4>Databases & Tools</h4>
-            <ul>
-                <li>MySQL</li>
-                <li>Git & GitHub</li>
-                <li>AWS Cloud Services</li>
-            </ul>
+                <div class="skill-category">
+                    <h4>Databases & Tools</h4>
+                    <ul>
+                        <li>MySQL</li>
+                        <li>Git & GitHub</li>
+                        <li>AWS Cloud Services</li>
+                    </ul>
+                </div>
+            </div>
         </section>
 
-        <hr>
+        <!-- Projects Section -->
+        <section class="projects-section">
+            <h3>Projects</h3>
+            
+            <div class="project-card">
+                <div class="project-header">
+                    <h4>Notes App</h4>
+                    <span class="project-year">Since 2025</span>
+                </div>
+                <p class="project-tools"><strong>Tools:</strong> Flutter, Firebase</p>
+                <a href="https://github.com/Balaji2327" target="_blank" class="project-link">View on GitHub</a>
+                <ul class="project-details">
+                    <li>Developed a cross-platform mobile app to create, organize, and manage personal notes.</li>
+                    <li>Integrated Firebase for authentication and real-time data storage.</li>
+                    <li>Implemented features like reminders, folders, and statistics tracking.</li>
+                </ul>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <h4>To-Do List App</h4>
+                    <span class="project-year">Since 2025</span>
+                </div>
+                <p class="project-tools"><strong>Tools:</strong> Flutter</p>
+                <a href="https://github.com/Balaji2327" target="_blank" class="project-link">View on GitHub</a>
+                <ul class="project-details">
+                    <li>Developed a task management app with features to add, edit, and delete daily tasks.</li>
+                </ul>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <h4>Attendance Management System</h4>
+                    <span class="project-year">Since 2025</span>
+                </div>
+                <p class="project-tools"><strong>Tools:</strong> Flutter, Firebase</p>
+                <a href="https://github.com/Balaji2327" target="_blank" class="project-link">View on GitHub</a>
+                <ul class="project-details">
+                    <li>Developed a mobile-based Attendance Management System with a clean, modern UI using Flutter and a unified teal themed design.</li>
+                    <li>Implemented role-based modules for Admin, Students, and Faculty with smooth navigation and responsive layouts.</li>
+                    <li>Integrated Firebase Authentication and Firestore for secure data management and real-time storage of student and faculty records.</li>
+                    <li>Added support for BLE (Bluetooth Low Energy)–based attendance detection for faster and contactless marking.</li>
+                    <li>Built user interfaces for adding and viewing students/faculty, including a searchable records page with list/detailed toggle views.</li>
+                    <li>Ensured consistent UI/UX using custom buttons, cards, typography, and soft shadow effects for enhanced readability.</li>
+                </ul>
+            </div>
+        </section>
 
         <!-- Educational Qualifications Table -->
-        <section>
+        <section class="education-section">
             <h3>Educational Qualifications</h3>
-            <table border="1">
-                <thead>
-                    <tr>
-                        <th>Degree</th>
-                        <th>Institution</th>
-                        <th>Year of Completion</th>
-                        <th>Grade/CGPA</th>
-                        <th>Specialization</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Master of Technology in Computer Science (Integrated)</td>
-                        <td>Sri sairam Engineering College</td>
-                        <td>2028</td>
-                        <td>8.36/10</td>
-                        <td>Software Engineering</td>
-                    </tr>
-                    <tr>
-                        <td>Higher Secondary Education (Science)</td>
-                        <td>Tilak Vidyalaya Higher Secondary School</td>
-                        <td>2023</td>
-                        <td>89%</td>
-                        <td>Physics, Chemistry, Mathematics</td>
-                    </tr>
-                    <tr>
-                        <td>Secondary Education</td>
-                        <td>Eagabram primary school</td>
-                        <td>2015</td>
-                        <td>95%</td>
-                        <td>General Studies</td>
-                    </tr>
-                </tbody>
-            </table>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Degree</th>
+                            <th>Institution</th>
+                            <th>Year of Completion</th>
+                            <th>Grade/CGPA</th>
+                            <th>Specialization</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Master of Technology in Computer Science (Integrated)</td>
+                            <td>Sri sairam Engineering College</td>
+                            <td>2028</td>
+                            <td>8.36/10</td>
+                            <td>Software Engineering</td>
+                        </tr>
+                        <tr>
+                            <td>Higher Secondary Education (Science)</td>
+                            <td>Tilak Vidyalaya Higher Secondary School</td>
+                            <td>2023</td>
+                            <td>89%</td>
+                            <td>Physics, Chemistry, Mathematics</td>
+                        </tr>
+                        <tr>
+                            <td>Secondary Education</td>
+                            <td>Eagabram primary school</td>
+                            <td>2015</td>
+                            <td>95%</td>
+                            <td>General Studies</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </section>
 
-        <hr>
         <!-- Connect With Me Section -->
-        <section>
+        <section class="connect-section">
             <h3>Connect With Me</h3>
-            <p><strong>Professional Links:</strong></p>
-            <ul>
-                <li><a href="https://github.com/Balaji2327" target="_blank">GitHub Profile</a> - View my open source projects and contributions</li>
-                <li><a href="https://www.linkedin.com/in/balaji-r-4068a5295/" target="_blank">LinkedIn Profile</a> - Connect with me professionally</li>
-                <li><a href="http://www.skillrack.com/profile/442573/5e698a772b3098db08144c110736e031c6708ce4" target="_blank">Skillrack Profile</a> - Follow my programming updates</li>
-                <li><a href="https://www.hackerrank.com/profile/balajiraviseetha" target="_blank">HackerRank Profile</a> - Check out my coding challenges and achievements</li>
-            </ul>
+            
+            <div class="connect-grid">
+                <div class="connect-box">
+                    <p class="connect-title">Professional Links:</p>
+                    <ul>
+                        <li><a href="https://github.com/Balaji2327" target="_blank">GitHub Profile</a> - View my open source projects and contributions</li>
+                        <li><a href="https://www.linkedin.com/in/balaji-r-4068a5295/" target="_blank">LinkedIn Profile</a> - Connect with me professionally</li>
+                        <li><a href="http://www.skillrack.com/profile/442573/5e698a772b3098db08144c110736e031c6708ce4" target="_blank">Skillrack Profile</a> - Follow my programming updates</li>
+                        <li><a href="https://www.hackerrank.com/profile/balajiraviseetha" target="_blank">HackerRank Profile</a> - Check out my coding challenges and achievements</li>
+                    </ul>
+                </div>
 
-            <p><strong>Contact Information:</strong></p>
-            <ul>
-                <li><strong>Email:</strong> balajiraviseetha@gmail.com</li>
-                <li><strong>Phone:</strong> 8124794990</li>
-                <li><strong>Location:</strong> Tambaram,Chennai</li>
-            </ul>
+                <div class="connect-box">
+                    <p class="connect-title">Contact Information:</p>
+                    <ul>
+                        <li><strong>Email:</strong> balajiraviseetha@gmail.com</li>
+                        <li><strong>Phone:</strong> 8124794990</li>
+                        <li><strong>Location:</strong> Tambaram, Chennai</li>
+                    </ul>
+                </div>
+            </div>
         </section>
-
-        <hr>
 
         <!-- Contact Form Section -->
-        <section>
+        <section class="contact-section">
             <h3>Get In Touch</h3>
             <p>Feel free to reach out to me for collaboration opportunities, project discussions, or just to say hello!</p>
             
@@ -147,59 +211,58 @@
                 <fieldset>
                     <legend>Contact Information</legend>
                     
-                    <p>
-                        <label for="name"><strong>Full Name:</strong></label><br>
-                        <input type="text" id="name" name="name" required size="50" placeholder="Enter your full name">
-                    </p>
+                    <div class="form-group">
+                        <label for="name">Full Name:</label>
+                        <input type="text" id="name" name="name" required placeholder="Enter your full name">
+                    </div>
                     
-                    <p>
-                        <label for="email"><strong>Email Address:</strong></label><br>
-                        <input type="email" id="email" name="email" required size="50" placeholder="Enter your email address">
-                    </p>
+                    <div class="form-group">
+                        <label for="email">Email Address:</label>
+                        <input type="email" id="email" name="email" required placeholder="Enter your email address">
+                    </div>
                     
-                    <p>
-                        <label for="phone"><strong>Phone Number (Optional):</strong></label><br>
-                        <input type="tel" id="phone" name="phone" size="50" placeholder="Enter your phone number">
-                    </p>
+                    <div class="form-group">
+                        <label for="phone">Phone Number (Optional):</label>
+                        <input type="tel" id="phone" name="phone" placeholder="Enter your phone number">
+                    </div>
                 </fieldset>
 
                 <fieldset>
                     <legend>Message Details</legend>
                     
-                    <p>
-                        <label for="subject"><strong>Subject:</strong></label><br>
-                        <input type="text" id="subject" name="subject" size="50" placeholder="Enter message subject">
-                    </p>
+                    <div class="form-group">
+                        <label for="subject">Subject:</label>
+                        <input type="text" id="subject" name="subject" placeholder="Enter message subject">
+                    </div>
                     
-                    <p>
-                        <label for="message"><strong>Message:</strong></label><br>
-                        <textarea id="message" name="message" required rows="6" cols="50" placeholder="Enter your message here..."></textarea>
-                    </p>
+                    <div class="form-group">
+                        <label for="message">Message:</label>
+                        <textarea id="message" name="message" required rows="6" placeholder="Enter your message here..."></textarea>
+                    </div>
                     
-                    <p>
-                        <label for="contact-method"><strong>Preferred Contact Method:</strong></label><br>
+                    <div class="form-group">
+                        <label for="contact-method">Preferred Contact Method:</label>
                         <select id="contact-method" name="contact-method">
                             <option value="email">Email</option>
                             <option value="phone">Phone</option>
                             <option value="either">Either</option>
                         </select>
-                    </p>
+                    </div>
                 </fieldset>
 
-                <p>
-                    <input type="submit" value="Send Message">
-                    <input type="reset" value="Clear Form">
-                </p>
+                <div class="form-buttons">
+                    <input type="submit" value="Send Message" class="btn-primary">
+                    <input type="reset" value="Clear Form" class="btn-secondary">
+                </div>
             </form>
         </section>
     </main>
 
     <!-- Footer Section -->
     <footer>
-        <hr>
-        <p><small>&copy; 2025 Balaji. All rights reserved.</small></p>
-        <p><small>Built with semantic HTML | Last updated: January 2025</small></p>
-        <p><small>Available for freelance projects and full-time opportunities</small></p>
+        <p>&copy; 2025 Balaji. All rights reserved.</p>
+        <p>Built with semantic HTML | Last updated: January 2025</p>
+        <p>Available for freelance projects and full-time opportunities</p>
     </footer>
 </body>
 </html>
