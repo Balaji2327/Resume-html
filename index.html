@@ -7,7 +7,618 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f4f4;
+            overflow-x: hidden;
+        }
+
+        /* Animations */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes scaleIn {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, #FF7F50 0%, #FF6347 100%);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            animation: fadeInDown 0.8s ease-out;
+        }
+
+        .header-content h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 700;
+            animation: fadeInDown 1s ease-out 0.2s both;
+        }
+
+        .header-content h2 {
+            font-size: 1.5rem;
+            font-weight: 400;
+            margin-bottom: 30px;
+            opacity: 0.9;
+            animation: fadeInDown 1s ease-out 0.4s both;
+        }
+
+        .profile-img {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            border: 5px solid white;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            object-fit: cover;
+            transition: transform 0.3s ease;
+            animation: scaleIn 1s ease-out 0.6s both;
+        }
+
+        .profile-img:hover {
+            transform: scale(1.05);
+        }
+
+        /* Main Container */
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Section Styles */
+        section {
+            background: white;
+            margin: 30px 0;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            animation: fadeInUp 0.8s ease-out both;
+        }
+
+        section:nth-child(1) {
+            animation-delay: 0.8s;
+        }
+
+        section:nth-child(2) {
+            animation-delay: 1s;
+        }
+
+        section:nth-child(3) {
+            animation-delay: 1.2s;
+        }
+
+        section:nth-child(4) {
+            animation-delay: 1.4s;
+        }
+
+        section:nth-child(5) {
+            animation-delay: 1.6s;
+        }
+
+        section h3 {
+            color: #FF7F50;
+            font-size: 2rem;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #FF7F50;
+            font-weight: 600;
+            animation: slideInLeft 0.6s ease-out both;
+        }
+
+        section p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        /* About Section */
+        .about-section p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            animation: fadeIn 0.8s ease-out both;
+        }
+
+        .about-section p:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .about-section p:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+
+        .about-section p:nth-child(4) {
+            animation-delay: 0.6s;
+        }
+
+        /* Skills Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        .skill-category {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #FF7F50;
+            animation: fadeInUp 0.6s ease-out both;
+        }
+
+        .skill-category:nth-child(1) {
+            animation-delay: 0.2s;
+        }
+
+        .skill-category:nth-child(2) {
+            animation-delay: 0.4s;
+        }
+
+        .skill-category:nth-child(3) {
+            animation-delay: 0.6s;
+        }
+
+        .skill-category:nth-child(4) {
+            animation-delay: 0.8s;
+        }
+
+        .skill-category h4 {
+            color: #FF7F50;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .skill-category ul {
+            list-style: none;
+        }
+
+        .skill-category ul li {
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+            font-weight: 400;
+        }
+
+        .skill-category ul li::before {
+            content: "▹";
+            position: absolute;
+            left: 0;
+            color: #FF7F50;
+            font-weight: bold;
+        }
+
+        /* Education Section */
+        .table-container {
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        thead {
+            background: linear-gradient(135deg, #FF7F50 0%, #FF6347 100%);
+            color: white;
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+
+        tbody tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+
+        tbody tr:hover {
+            background-color: rgba(255, 127, 80, 0.1);
+            transition: background-color 0.3s ease;
+        }
+
+        th {
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+
+        /* Projects Section */
+        .projects-section {
+            background: white;
+        }
+
+        .project-card {
+            background: #f8f9fa;
+            padding: 25px;
+            margin-bottom: 25px;
+            border-radius: 8px;
+            border-left: 5px solid #FF7F50;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            animation: slideInRight 0.6s ease-out both;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(255, 127, 80, 0.2);
+        }
+
+        .project-card:last-child {
+            margin-bottom: 0;
+        }
+
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .project-header h4 {
+            color: #FF7F50;
+            font-size: 1.4rem;
+            margin: 0;
+            font-weight: 600;
+        }
+
+        .project-year {
+            background: #FF7F50;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .project-tools {
+            color: #666;
+            margin-bottom: 10px;
+            font-size: 1rem;
+        }
+
+        .project-link {
+            display: inline-block;
+            color: #FF7F50;
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 15px;
+            padding: 8px 20px;
+            border: 2px solid #FF7F50;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .project-link:hover {
+            background: #FF7F50;
+            color: white;
+            transform: translateX(5px);
+        }
+
+        .project-details {
+            list-style: none;
+            margin-top: 15px;
+        }
+
+        .project-details li {
+            padding: 10px 0;
+            padding-left: 30px;
+            position: relative;
+            line-height: 1.6;
+            color: #555;
+        }
+
+        .project-details li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #FF7F50;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        /* Connect Section */
+        .connect-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        .connect-box {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 8px;
+            border-top: 4px solid #FF7F50;
+            animation: scaleIn 0.6s ease-out both;
+        }
+
+        .connect-box:nth-child(1) {
+            animation-delay: 0.2s;
+        }
+
+        .connect-box:nth-child(2) {
+            animation-delay: 0.4s;
+        }
+
+        .connect-title {
+            font-weight: bold;
+            font-size: 1.2rem;
+            color: #FF7F50;
+            margin-bottom: 15px;
+        }
+
+        .connect-box ul {
+            list-style: none;
+        }
+
+        .connect-box ul li {
+            padding: 10px 0;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        .connect-box ul li:last-child {
+            border-bottom: none;
+        }
+
+        .connect-box a {
+            color: #FF7F50;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .connect-box a:hover {
+            color: #FF9966;
+            text-decoration: underline;
+        }
+
+        /* Contact Form */
+        .contact-section {
+            background: linear-gradient(to bottom, #ffffff 0%, #f8f9fa 100%);
+        }
+
+        fieldset {
+            border: 2px solid #e9ecef;
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 25px;
+        }
+
+        legend {
+            font-weight: 600;
+            color: #FF7F50;
+            padding: 0 10px;
+            font-size: 1.1rem;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #555;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e9ecef;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-family: 'Poppins', sans-serif;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #FF7F50;
+        }
+
+        .form-buttons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .btn-primary,
+        .btn-secondary {
+            padding: 12px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #FF7F50 0%, #FF6347 100%);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: linear-gradient(135deg, #FF9966 0%, #FF7F50 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 127, 80, 0.4);
+        }
+
+        .btn-secondary {
+            background: #e9ecef;
+            color: #555;
+        }
+
+        .btn-secondary:hover {
+            background: #ddd;
+        }
+
+        /* Footer */
+        footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 50px;
+            animation: fadeIn 1s ease-out 2s both;
+        }
+
+        footer p {
+            margin: 5px 0;
+            opacity: 0.9;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-content h1 {
+                font-size: 2rem;
+            }
+            
+            .header-content h2 {
+                font-size: 1.2rem;
+            }
+            
+            .profile-img {
+                width: 180px;
+                height: 180px;
+            }
+            
+            section {
+                padding: 25px;
+            }
+            
+            section h3 {
+                font-size: 1.5rem;
+            }
+            
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .project-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .project-year {
+                align-self: flex-start;
+            }
+            
+            .form-buttons {
+                flex-direction: column;
+            }
+            
+            .btn-primary,
+            .btn-secondary {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header {
+                padding: 40px 15px;
+            }
+            
+            main {
+                padding: 10px;
+            }
+            
+            section {
+                padding: 20px;
+                margin: 20px 0;
+            }
+
+            .project-card {
+                padding: 20px;
+            }
+
+            .project-header h4 {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Header Section with Name and Professional Title -->
@@ -28,21 +639,9 @@
         <!-- About Me Section -->
         <section class="about-section">
             <h3>About Me</h3>
-            <p>
-                I am a passionate and dedicated app developer. My expertise spans across both front-end and 
-                back-end technologies, allowing me to deliver complete and seamless user experiences.
-            </p>
-            <p>
-                I thrive in collaborative environments and enjoy tackling complex technical challenges. 
-                My goal is to leverage cutting-edge technologies to build innovative solutions that make a 
-                positive impact on users and businesses alike. I am constantly learning and adapting to 
-                new technologies and industry best practices.
-            </p>
-            <p>
-                When I'm not coding, I enjoy contributing to open-source projects, attending tech meetups, 
-                and mentoring aspiring developers. I believe in the power of continuous learning and 
-                knowledge sharing within the developer community.
-            </p>
+            <p>Motivated individual with a strong passion for APP development. Focused on driving impactful solutions through 
+logical reasoning and innovative approaches.</p>
+            
         </section>
 
         <!-- Technical Skills Section -->
@@ -65,6 +664,7 @@
                     <h4>Frontend Technologies</h4>
                     <ul>
                         <li>Flutter</li>
+                        <li>React.js</li>
                         <li>HTML & CSS</li>
                     </ul>
                 </div>
@@ -72,14 +672,17 @@
                 <div class="skill-category">
                     <h4>Backend Technologies</h4>
                     <ul>
-                        <li>Fire-Base</li>
+                        <li>Firebase</li>
+                        <li>Node.js</li>
+                        <li>Express.js</li>
                     </ul>
                 </div>
 
                 <div class="skill-category">
                     <h4>Databases & Tools</h4>
                     <ul>
-                        <li>MySQL</li>
+                        <li>Mongo DB</li>
+                        <li>Supabase</li>
                         <li>Git & GitHub</li>
                         <li>AWS Cloud Services</li>
                     </ul>
@@ -97,7 +700,7 @@
                     <span class="project-year">Since 2025</span>
                 </div>
                 <p class="project-tools"><strong>Tools:</strong> Flutter, Firebase</p>
-                <a href="https://github.com/Balaji2327" target="_blank" class="project-link">View on GitHub</a>
+                <a href="https://github.com/Balaji2327/Notes" target="_blank" class="project-link">View on GitHub</a>
                 <ul class="project-details">
                     <li>Developed a cross-platform mobile app to create, organize, and manage personal notes.</li>
                     <li>Integrated Firebase for authentication and real-time data storage.</li>
@@ -111,7 +714,7 @@
                     <span class="project-year">Since 2025</span>
                 </div>
                 <p class="project-tools"><strong>Tools:</strong> Flutter</p>
-                <a href="https://github.com/Balaji2327" target="_blank" class="project-link">View on GitHub</a>
+                <a href="https://github.com/Balaji2327/To_do_app" target="_blank" class="project-link">View on GitHub</a>
                 <ul class="project-details">
                     <li>Developed a task management app with features to add, edit, and delete daily tasks.</li>
                 </ul>
@@ -123,7 +726,7 @@
                     <span class="project-year">Since 2025</span>
                 </div>
                 <p class="project-tools"><strong>Tools:</strong> Flutter, Firebase</p>
-                <a href="https://github.com/Balaji2327" target="_blank" class="project-link">View on GitHub</a>
+                <a href="https://github.com/MVigneshayyanar/camsvirtusa" target="_blank" class="project-link">View on GitHub</a>
                 <ul class="project-details">
                     <li>Developed a mobile-based Attendance Management System with a clean, modern UI using Flutter and a unified teal themed design.</li>
                     <li>Implemented role-based modules for Admin, Students, and Faculty with smooth navigation and responsive layouts.</li>
@@ -133,10 +736,43 @@
                     <li>Ensured consistent UI/UX using custom buttons, cards, typography, and soft shadow effects for enhanced readability.</li>
                 </ul>
             </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <h4>KK360 – Comprehensive EdTech Mobile Application</h4>
+                    <span class="project-year">2025-2026</span>
+                </div>
+                <p class="project-tools"><strong>Tools:</strong> Flutter, Firebase, Google Gemini AI</p>
+                <a href="https://github.com/Balaji2327/KK360" target="_blank" class="project-link">View on GitHub</a>
+                <ul class="project-details">
+                    <li>Developed a cross-platform EdTech application with role-based dashboards for Admin, Tutor, and Student using Firebase Authentication.</li>
+                    <li>Integrated Google Gemini Generative AI to automatically create quizzes, assessments, and learning content based on tutor-provided topics.</li>
+                    <li>Built a full-featured Learning Management System (LMS) including course organization, class management, assignment grading, and file uploads using Firebase Storage.</li>
+                    <li>Implemented a cache-first data fetching strategy, reducing database reads and improving app responsiveness.</li>
+                    <li>Designed a modern, accessible UI with dark mode and per-user theme customization.</li>
+                    <li>Integrated secure video meeting access, restricting entry to authorized student accounts only.</li>
+                </ul>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <h4>KK360 – Comprehensive EdTech Website</h4>
+                    <span class="project-year">2025-2026</span>
+                </div>
+                <p class="project-tools"><strong>Tools:</strong> React.js, Node.js, Express, Supabase, Tailwind CSS, GSAP, Radix UI</p>
+                <a href="https://github.com/Balaji2327/EdTech" target="_blank" class="project-link">View on GitHub</a>
+                <ul class="project-details">
+                    <li>Developed a scalable, role-based Learning Management System supporting Admin, Tutor, and Student workflows using React and Node.js/Express.</li>
+                    <li>Integrated Google Gemini AI to automate quiz and assessment generation, enabling tutors to instantly create curriculum-aligned questions.</li>
+                    <li>Built a robust assessment engine with assignment submissions, deadline enforcement, and interactive performance analytics using Recharts.</li>
+                    <li>Designed a premium, responsive user interface using Radix UI primitives, Tailwind CSS, and GSAP animations for smooth transitions and enhanced UX.</li>
+                    <li>Implemented secure authentication, authorization, and real-time data synchronization using Supabase.</li>
+                </ul>
+            </div>
         </section>
 
         <!-- Educational Qualifications Table -->
-        <section class="education-section">
+        <!-- <section class="education-section">
             <h3>Educational Qualifications</h3>
             <div class="table-container">
                 <table>
@@ -173,8 +809,8 @@
                         </tr>
                     </tbody>
                 </table>
-            </div>
-        </section>
+            </div> -->
+        <!-- </section> -->
 
         <!-- Connect With Me Section -->
         <section class="connect-section">
@@ -186,8 +822,8 @@
                     <ul>
                         <li><a href="https://github.com/Balaji2327" target="_blank">GitHub Profile</a> - View my open source projects and contributions</li>
                         <li><a href="https://www.linkedin.com/in/balaji-r-4068a5295/" target="_blank">LinkedIn Profile</a> - Connect with me professionally</li>
-                        <li><a href="http://www.skillrack.com/profile/442573/5e698a772b3098db08144c110736e031c6708ce4" target="_blank">Skillrack Profile</a> - Follow my programming updates</li>
-                        <li><a href="https://www.hackerrank.com/profile/balajiraviseetha" target="_blank">HackerRank Profile</a> - Check out my coding challenges and achievements</li>
+                        <li><a href="https://leetcode.com/u/Balaji2123/" target="_blank">LeetCode Profile</a> - Follow my programming updates</li>
+                        <li><a href="https://www.geeksforgeeks.org/profile/balajiravr8ze?tab=activity" target="_blank">Geeks For Geeks Profile</a> - Check out my coding challenges and achievements</li>
                     </ul>
                 </div>
 
@@ -203,7 +839,7 @@
         </section>
 
         <!-- Contact Form Section -->
-        <section class="contact-section">
+        <!-- <section class="contact-section">
             <h3>Get In Touch</h3>
             <p>Feel free to reach out to me for collaboration opportunities, project discussions, or just to say hello!</p>
             
@@ -255,14 +891,13 @@
                     <input type="reset" value="Clear Form" class="btn-secondary">
                 </div>
             </form>
-        </section>
+        </section> -->
     </main>
 
     <!-- Footer Section -->
     <footer>
         <p>&copy; 2025 Balaji. All rights reserved.</p>
-        <p>Built with semantic HTML | Last updated: January 2025</p>
-        <p>Available for freelance projects and full-time opportunities</p>
+        <!-- <p>Built with semantic HTML | Last updated: January 2025</p> -->
+        <!-- <p>Available for freelance projects and full-time opportunities</p> -->
     </footer>
 </body>
-</html>
