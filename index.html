@@ -259,44 +259,6 @@
             font-weight: bold;
         }
 
-        /* Education Section */
-        .table-container {
-            overflow-x: auto;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-        }
-
-        thead {
-            background: linear-gradient(135deg, #FF7F50 0%, #FF6347 100%);
-            color: white;
-        }
-
-        th, td {
-            padding: 15px;
-            text-align: left;
-            border: 1px solid #ddd;
-        }
-
-        tbody tr:nth-child(even) {
-            background-color: #f8f9fa;
-        }
-
-        tbody tr:hover {
-            background-color: rgba(255, 127, 80, 0.1);
-            transition: background-color 0.3s ease;
-        }
-
-        th {
-            font-weight: 600;
-            text-transform: uppercase;
-            font-size: 0.9rem;
-            letter-spacing: 1px;
-        }
-
         /* Projects Section */
         .projects-section {
             background: white;
@@ -353,12 +315,18 @@
             font-size: 1rem;
         }
 
+        .project-links {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+        }
+
         .project-link {
             display: inline-block;
             color: #FF7F50;
             text-decoration: none;
             font-weight: 600;
-            margin-bottom: 15px;
             padding: 8px 20px;
             border: 2px solid #FF7F50;
             border-radius: 5px;
@@ -449,92 +417,6 @@
             text-decoration: underline;
         }
 
-        /* Contact Form */
-        .contact-section {
-            background: linear-gradient(to bottom, #ffffff 0%, #f8f9fa 100%);
-        }
-
-        fieldset {
-            border: 2px solid #e9ecef;
-            border-radius: 8px;
-            padding: 25px;
-            margin-bottom: 25px;
-        }
-
-        legend {
-            font-weight: 600;
-            color: #FF7F50;
-            padding: 0 10px;
-            font-size: 1.1rem;
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        .form-group label {
-            display: block;
-            font-weight: 600;
-            margin-bottom: 8px;
-            color: #555;
-        }
-
-        .form-group input,
-        .form-group textarea,
-        .form-group select {
-            width: 100%;
-            padding: 12px;
-            border: 2px solid #e9ecef;
-            border-radius: 5px;
-            font-size: 1rem;
-            font-family: 'Poppins', sans-serif;
-            transition: border-color 0.3s ease;
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus,
-        .form-group select:focus {
-            outline: none;
-            border-color: #FF7F50;
-        }
-
-        .form-buttons {
-            display: flex;
-            gap: 15px;
-            margin-top: 20px;
-        }
-
-        .btn-primary,
-        .btn-secondary {
-            padding: 12px 30px;
-            border: none;
-            border-radius: 5px;
-            font-size: 1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .btn-primary {
-            background: linear-gradient(135deg, #FF7F50 0%, #FF6347 100%);
-            color: white;
-        }
-
-        .btn-primary:hover {
-            background: linear-gradient(135deg, #FF9966 0%, #FF7F50 100%);
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(255, 127, 80, 0.4);
-        }
-
-        .btn-secondary {
-            background: #e9ecef;
-            color: #555;
-        }
-
-        .btn-secondary:hover {
-            background: #ddd;
-        }
-
         /* Footer */
         footer {
             background: #2c3e50;
@@ -585,14 +467,14 @@
             .project-year {
                 align-self: flex-start;
             }
-            
-            .form-buttons {
+
+            .project-links {
                 flex-direction: column;
             }
-            
-            .btn-primary,
-            .btn-secondary {
+
+            .project-link {
                 width: 100%;
+                text-align: center;
             }
         }
 
@@ -616,6 +498,15 @@
 
             .project-header h4 {
                 font-size: 1.2rem;
+            }
+
+            .project-links {
+                flex-direction: column;
+            }
+
+            .project-link {
+                width: 100%;
+                text-align: center;
             }
         }
     </style>
@@ -696,27 +587,17 @@ logical reasoning and innovative approaches.</p>
             
             <div class="project-card">
                 <div class="project-header">
-                    <h4>Notes App</h4>
-                    <span class="project-year">Since 2025</span>
+                    <h4>My Meds - Medicine Reminder App</h4>
+                    <span class="project-year">2026</span>
                 </div>
-                <p class="project-tools"><strong>Tools:</strong> Flutter, Firebase</p>
-                <a href="https://github.com/Balaji2327/Notes" target="_blank" class="project-link">View on GitHub</a>
-                <ul class="project-details">
-                    <li>Developed a cross-platform mobile app to create, organize, and manage personal notes.</li>
-                    <li>Integrated Firebase for authentication and real-time data storage.</li>
-                    <li>Implemented features like reminders, folders, and statistics tracking.</li>
-                </ul>
-            </div>
-
-            <div class="project-card">
-                <div class="project-header">
-                    <h4>To-Do List App</h4>
-                    <span class="project-year">Since 2025</span>
+                <p class="project-tools"><strong>Tools:</strong> Flutter, Hive (Local Storage)</p>
+                <div class="project-links">
+                    <a href="https://github.com/Balaji2327/My-Meds" target="_blank" class="project-link">View on GitHub</a>
                 </div>
-                <p class="project-tools"><strong>Tools:</strong> Flutter</p>
-                <a href="https://github.com/Balaji2327/To_do_app" target="_blank" class="project-link">View on GitHub</a>
                 <ul class="project-details">
-                    <li>Developed a task management app with features to add, edit, and delete daily tasks.</li>
+                    <li>Developed an offline-first medicine reminder mobile app using Flutter with Hive for reliable local data persistence.</li>
+                    <li>Implemented background notifications that survive device reboots using Android Alarm Manager and Dart background isolates.</li>
+                    <li>Built intelligent recurring reminder logic with smooth animations and responsive UI for an enhanced user experience.</li>
                 </ul>
             </div>
 
@@ -725,8 +606,10 @@ logical reasoning and innovative approaches.</p>
                     <h4>Attendance Management System</h4>
                     <span class="project-year">Since 2025</span>
                 </div>
-                <p class="project-tools"><strong>Tools:</strong> Flutter, Firebase</p>
-                <a href="https://github.com/MVigneshayyanar/camsvirtusa" target="_blank" class="project-link">View on GitHub</a>
+                <p class="project-tools"><strong>Tools:</strong> Flutter, Firebase, Bluetooth Low Energy (BLE)</p>
+                <div class="project-links">
+                    <a href="https://github.com/MVigneshayyanar/camsvirtusa" target="_blank" class="project-link">View on GitHub</a>
+                </div>
                 <ul class="project-details">
                     <li>Developed a mobile-based Attendance Management System with a clean, modern UI using Flutter and a unified teal themed design.</li>
                     <li>Implemented role-based modules for Admin, Students, and Faculty with smooth navigation and responsive layouts.</li>
@@ -739,11 +622,14 @@ logical reasoning and innovative approaches.</p>
 
             <div class="project-card">
                 <div class="project-header">
-                    <h4>KK360 – Comprehensive EdTech Mobile Application</h4>
+                    <h4>KK360 – Mobile Application and Web Application</h4>
                     <span class="project-year">2025-2026</span>
                 </div>
-                <p class="project-tools"><strong>Tools:</strong> Flutter, Firebase, Google Gemini AI</p>
-                <a href="https://github.com/Balaji2327/KK360" target="_blank" class="project-link">View on GitHub</a>
+                <p class="project-tools"><strong>Tools:</strong> Flutter, React, Firebase, Google Gemini AI</p>
+                <div class="project-links">
+                    <a href="https://github.com/Balaji2327/KK360" target="_blank" class="project-link">View on GitHub</a>
+                    <a href="https://github.com/Balaji2327/kk_webapp" target="_blank" class="project-link">View on GitHub</a>
+                </div>
                 <ul class="project-details">
                     <li>Developed a cross-platform EdTech application with role-based dashboards for Admin, Tutor, and Student using Firebase Authentication.</li>
                     <li>Integrated Google Gemini Generative AI to automatically create quizzes, assessments, and learning content based on tutor-provided topics.</li>
@@ -756,11 +642,13 @@ logical reasoning and innovative approaches.</p>
 
             <div class="project-card">
                 <div class="project-header">
-                    <h4>KK360 – Comprehensive EdTech Website</h4>
+                    <h4>Comprehensive EdTech Website</h4>
                     <span class="project-year">2025-2026</span>
                 </div>
-                <p class="project-tools"><strong>Tools:</strong> React.js, Node.js, Express, Supabase, Tailwind CSS, GSAP, Radix UI</p>
-                <a href="https://github.com/Balaji2327/EdTech" target="_blank" class="project-link">View on GitHub</a>
+                <p class="project-tools"><strong>Tools:</strong> React.js, Node.js, Express, Supabase, Tailwind CSS</p>
+                <div class="project-links">
+                    <a href="https://github.com/Balaji2327/EdTech" target="_blank" class="project-link">View on GitHub</a>
+                </div>
                 <ul class="project-details">
                     <li>Developed a scalable, role-based Learning Management System supporting Admin, Tutor, and Student workflows using React and Node.js/Express.</li>
                     <li>Integrated Google Gemini AI to automate quiz and assessment generation, enabling tutors to instantly create curriculum-aligned questions.</li>
@@ -769,48 +657,8 @@ logical reasoning and innovative approaches.</p>
                     <li>Implemented secure authentication, authorization, and real-time data synchronization using Supabase.</li>
                 </ul>
             </div>
+            
         </section>
-
-        <!-- Educational Qualifications Table -->
-        <!-- <section class="education-section">
-            <h3>Educational Qualifications</h3>
-            <div class="table-container">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Degree</th>
-                            <th>Institution</th>
-                            <th>Year of Completion</th>
-                            <th>Grade/CGPA</th>
-                            <th>Specialization</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Master of Technology in Computer Science (Integrated)</td>
-                            <td>Sri sairam Engineering College</td>
-                            <td>2028</td>
-                            <td>8.36/10</td>
-                            <td>Software Engineering</td>
-                        </tr>
-                        <tr>
-                            <td>Higher Secondary Education (Science)</td>
-                            <td>Tilak Vidyalaya Higher Secondary School</td>
-                            <td>2023</td>
-                            <td>89%</td>
-                            <td>Physics, Chemistry, Mathematics</td>
-                        </tr>
-                        <tr>
-                            <td>Secondary Education</td>
-                            <td>Eagabram primary school</td>
-                            <td>2015</td>
-                            <td>95%</td>
-                            <td>General Studies</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div> -->
-        <!-- </section> -->
 
         <!-- Connect With Me Section -->
         <section class="connect-section">
@@ -837,67 +685,10 @@ logical reasoning and innovative approaches.</p>
                 </div>
             </div>
         </section>
-
-        <!-- Contact Form Section -->
-        <!-- <section class="contact-section">
-            <h3>Get In Touch</h3>
-            <p>Feel free to reach out to me for collaboration opportunities, project discussions, or just to say hello!</p>
-            
-            <form action="#" method="POST">
-                <fieldset>
-                    <legend>Contact Information</legend>
-                    
-                    <div class="form-group">
-                        <label for="name">Full Name:</label>
-                        <input type="text" id="name" name="name" required placeholder="Enter your full name">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="email">Email Address:</label>
-                        <input type="email" id="email" name="email" required placeholder="Enter your email address">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="phone">Phone Number (Optional):</label>
-                        <input type="tel" id="phone" name="phone" placeholder="Enter your phone number">
-                    </div>
-                </fieldset>
-
-                <fieldset>
-                    <legend>Message Details</legend>
-                    
-                    <div class="form-group">
-                        <label for="subject">Subject:</label>
-                        <input type="text" id="subject" name="subject" placeholder="Enter message subject">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="message">Message:</label>
-                        <textarea id="message" name="message" required rows="6" placeholder="Enter your message here..."></textarea>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="contact-method">Preferred Contact Method:</label>
-                        <select id="contact-method" name="contact-method">
-                            <option value="email">Email</option>
-                            <option value="phone">Phone</option>
-                            <option value="either">Either</option>
-                        </select>
-                    </div>
-                </fieldset>
-
-                <div class="form-buttons">
-                    <input type="submit" value="Send Message" class="btn-primary">
-                    <input type="reset" value="Clear Form" class="btn-secondary">
-                </div>
-            </form>
-        </section> -->
     </main>
 
     <!-- Footer Section -->
     <footer>
         <p>&copy; 2025 Balaji. All rights reserved.</p>
-        <!-- <p>Built with semantic HTML | Last updated: January 2025</p> -->
-        <!-- <p>Available for freelance projects and full-time opportunities</p> -->
     </footer>
 </body>
